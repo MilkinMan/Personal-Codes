@@ -1,0 +1,55 @@
+//Movement (This controls how fast the color box moves)
+int X= 1;
+int Y= 1;
+// Box Size (This controls how large the color box is)
+int a= 1;
+int b= 1;
+//Keep Movement and Box Size the same for best results
+
+int x=-X;
+int y=0;
+void setup() {
+  size( 1400, 800); 
+  background(0);
+}
+
+void draw() {
+  
+  x=x+X;
+  
+  if (x>1400) {
+    x=0;
+    y=y+Y;}
+  {if (y>810) { y=0;}}
+  
+  
+  
+  {noStroke();
+  fill( (x/5)-(y/3), 255-((x/5)+ (y/3)), (y/3)-(x/5));
+  rect(x, y, a, b);}
+  
+  
+  {fill(255);
+  rect(0,0,70,20);}
+  
+  {stroke(0);
+  fill(0);
+  text(x/14, 10, 13);}
+  
+  {stroke(0);
+  fill(0);
+  text(y/8, 35, 13);}
+  
+  
+}
+
+void keyPressed() {
+  
+  if (key == 'r') { 
+    noStroke();
+    fill( 0);
+    rect( 0, 0, 1400, 800);
+    x=-X;
+    y=0;
+  }
+}
